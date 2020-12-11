@@ -138,7 +138,7 @@
     justify-content: space-between;
     height: 80px;
     padding: 10px 10px 10px 20px;
-    border-bottom: 1px solid lightgrey;
+    border-bottom: 1px solid #eaeaea;
 }
 
 #l-side .contact-list .contact .l-contact {

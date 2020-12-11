@@ -13,7 +13,7 @@ var app = new Vue(
             contacts: [
                 {
                     name: 'Michele',
-                    avatar: '_1',
+                    avatar: 'img/avatar-1.svg',
                     visible: true,
                     messages: [
                         {
@@ -30,12 +30,12 @@ var app = new Vue(
                             date: '10/01/2020 16:15:22',
                             text: 'Tutto fatto!',
                             status: 'received'
-                        }
+                        },
                     ],
                 },
                 {
                     name: 'Fabio',
-                    avatar: '_2',
+                    avatar: 'img/avatar-2.svg',
                     visible: true,
                     messages: [
                         {
@@ -57,7 +57,7 @@ var app = new Vue(
                 },
                 {
                     name: 'Samuele',
-                    avatar: '_3',
+                    avatar: 'img/avatar-3.svg',
                     visible: true,
                     messages: [
                         {
@@ -79,7 +79,7 @@ var app = new Vue(
                 },
                 {
                     name: 'Luisa',
-                    avatar: '_4',
+                    avatar: 'img/avatar-4.svg',
                     visible: true,
                     messages: [
                         {
