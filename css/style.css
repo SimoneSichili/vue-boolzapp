@@ -1,0 +1,110 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    outline: none;
+    font-family: 'Lato', sans-serif;
+}
+
+#root {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(180deg, #019789 0%,#019789 15%, #d9dbd5 15%, #d9dbd5 100%);
+}
+
+.container {
+    display: flex;
+    width: 85%;
+    height: 95%;
+}
+
+/* left side */
+
+#l-side {
+    width: 35%;
+    height: 100%;
+}
+
+#l-side .user-nav {
+    width: 100%;
+    height: 70px;
+    background-color: #eaeaea;
+}
+
+#l-side .notifications {
+    width: 100%;
+    height: 90px;
+    background-color: #8EDAFC
+}
+
+#l-side .chat-search {
+    display: flex;
+    width: 100%;
+    padding: 10px;
+    background-color: #fafafa;
+}
+
+#l-side .search-icon {
+    width: 80px;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    border: 1px solid #e5e5e5;
+    border-right: 0;
+    background-color: #fff;
+    color: lightgrey;
+}
+
+#l-side input {
+    width: calc(100% - 80px);
+    height: 35px;
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #e5e5e5;
+    color: lightgrey;
+}
+
+#l-side input:focus {
+    color: black;
+}
+
+#l-side .contacts {
+    width: 100%;
+    height: calc(100% - 215px);
+    background-color: #fff;
+    overflow-y: scroll;
+}
+
+/* right side */
+
+#r-side {
+    width: 65%;
+    height: 100%;
+}
+
+#r-side .contact-nav {
+    width: 100%;
+    height: 70px;
+    background-color: #eaeaea;
+    border-left: 1px solid lightgrey;
+}
+
+#r-side .message-area {
+    width: 100%;
+    height: calc(100% - 145px);
+    background-image: url("../img/whatsapp-background.jpg");
+    background-position: center;
+    background-size: cover;
+    overflow-y: scroll;
+}
+
+#r-side .text-controls {
+    width: 100%;
+    height: 75px;
+    background-color: #eaeaea;
+    border-left: 1px solid lightgrey;
+}
