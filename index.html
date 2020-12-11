@@ -19,12 +19,28 @@
     <div id="root">
         
         <div class="container">
+
+            <!-- left side -->
             <div id="l-side">
                 <div class="user-nav">
-
+                    <div class="l-user-icons">
+                        <img src="img/avatar-01.svg" alt="Avatar Utente">
+                        <span class="user-name">Nome Utente</span>
+                    </div>
+                    <div class="r-user-icons">
+                        <i class="fas fa-circle-notch"></i>
+                        <i class="fas fa-comment-alt"></i>
+                        <i class="fas fa-ellipsis-v"></i>
+                    </div>
                 </div>
                 <div class="notifications">
-
+                    <div class="bell-background">
+                        <i class="fas fa-bell-slash"></i>
+                    </div>
+                    <div class="notifications-texts">
+                        <div class="strong">Ricevi notifiche di nuovi messaggi</div>
+                        <a href="#">Attiva le notifiche desktop</a>
+                    </div>           
                 </div>
                 <div class="chat-search">
                     <div class="search-icon">
@@ -32,21 +48,50 @@
                     </div>
                     <input type="text" placeholder="Cerca o inizia una nuova chat">
                 </div>
-                <div class="contacts">
-
+                <div class="contact-list">
+                    <div class="contact">
+                        <div class="l-contact">
+                            <img src="img/avatar-02.svg" alt="Avatar Utente">
+                            <div class="info">
+                                <div class="contact-name">Michele</div>
+                                <div class="last-access">Tutto fatto...</div>
+                            </div>
+                        </div>
+                        <div class="r-contact">
+                            <div class="message-time">01/01/2020</div>
+                        </div>
+                    </div>
                 </div>
             </div>
+            <!-- /left side -->
+
+            <!-- right side -->
             <div id="r-side">
                 <div class="contact-nav">
-                    
+                    <div class="l-contact-icons">
+                        <img src="img/avatar-02.svg" alt="Avatar Utente">
+                        <div class="contact-info">
+                            <div class="contact-name">Michele</div>
+                            <div class="last-access">Ultimo accesso alle ore</div>
+                        </div>
+                    </div>
+                    <div class="r-contact-icons">
+                        <i class="fas fa-search"></i>
+                        <i class="fas fa-paperclip"></i>
+                        <i class="fas fa-ellipsis-v"></i>
+                    </div>
                 </div>
                 <div class="message-area">
 
                 </div>
                 <div class="text-controls">
-                    
+                    <i class="far fa-smile"></i>
+                    <input type="text" placeholder="Scrivi un messaggio">
+                    <i class="fas fa-microphone"></i>
                 </div>
             </div>
+            <!-- /right side -->
+
         </div>
         
     </div>
