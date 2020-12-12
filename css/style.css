@@ -156,6 +156,10 @@
 }
 
 #l-side .contact-list .contact .l-contact .last-message {
+    width: 200px; 
+    white-space: nowrap; 
+    overflow: hidden;
+    text-overflow: ellipsis; 
     font-size: 14px;
     color: grey;
 }
