@@ -94,9 +94,14 @@ var app = new Vue(
                         }
                     ],
                 },
-            ],            
+            ],
+            currentContact : 0,
         },
         methods: {
+            setIndexContact: function(position) {
+                this.currentContact = position;
+                return this.currentContact;
+            },
         },
     }
 );

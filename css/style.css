@@ -113,17 +113,12 @@
     color: lightgrey;
 }
 
-#l-side input {
+#l-side .chat-search input {
     width: calc(100% - 80px);
     height: 35px;
     padding: 10px;
     background-color: #fff;
     border: 1px solid #e5e5e5;
-    color: lightgrey;
-}
-
-#l-side input:focus {
-    color: black;
 }
 
 #l-side .contact-list {
@@ -139,6 +134,11 @@
     height: 80px;
     padding: 10px 10px 10px 20px;
     border-bottom: 1px solid #eaeaea;
+    cursor: pointer;
+}
+
+.contact-active {
+    background-color: #eaeaea;
 }
 
 #l-side .contact-list .contact .l-contact {
@@ -155,7 +155,7 @@
     font-weight: 700;
 }
 
-#l-side .contact-list .contact .l-contact .last-access {
+#l-side .contact-list .contact .l-contact .last-message {
     font-size: 14px;
     color: grey;
 }
@@ -218,12 +218,40 @@
 
 
 #r-side .message-area {
+    display: flex;
+    flex-direction: column;
     width: 100%;
     height: calc(100% - 145px);
+    padding: 50px 70px;
     background-image: url("../img/whatsapp-background.jpg");
     background-position: center;
     background-size: cover;
     overflow-y: scroll;
+}
+
+#r-side .message-area .message {
+    position: relative;
+    width: 300px;
+    padding: 10px 10px 20px 10px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
+
+#r-side .message-area .message .message-date {
+    position: absolute;
+    right: 5px;
+    bottom: 5px;
+    font-size: 10px;
+    color: grey;
+}
+
+.message-sent {
+    align-self: flex-end;
+    background-color: #D5F9BA;
+}
+
+.message-received {
+    background-color: #fff;
 }
 
 #r-side .text-controls {
@@ -250,5 +278,4 @@
     border: 1px solid #e5e5e5;
     border-radius: 10px;
     background-color: #fff;
-    color: lightgrey;
 }

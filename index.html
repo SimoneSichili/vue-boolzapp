@@ -25,7 +25,7 @@
                 <div class="user-nav">
                     <div class="l-user-icons">
                         <img src="img/user-avatar.svg" alt="Avatar Utente">
-                        <span class="user-name">Nome Utente</span>
+                        <span class="user-name">Simone</span>
                     </div>
                     <div class="r-user-icons">
                         <i class="fas fa-circle-notch"></i>
@@ -49,16 +49,18 @@
                     <input type="text" placeholder="Cerca o inizia una nuova chat">
                 </div>
                 <div class="contact-list">
-                    <div v-for="(contact, index) in contacts" class="contact">
+                    <div v-for="(contact, index) in contacts" class="contact" 
+                    :class="(index == currentContact ? 'contact-active' : null)" 
+                    @click="setIndexContact(index)">
                         <div class="l-contact">
                             <img :src="contacts[index].avatar" alt="Avatar Contatto">
                             <div class="info">
-                                <div class="contact-name">{{contacts[index].name}}</div>
-                                <div class="last-access">{{contacts[index].messages[0].text}}</div>
+                                <div class="contact-name">{{contact.name}}</div>
+                                <div class="last-message">{{contact.messages.slice(-1)[0].text}}</div>
                             </div>
                         </div>
                         <div class="r-contact">
-                            <div class="message-time">{{contacts[index].messages[0].date}}</div>
+                            <div class="message-time">{{contact.messages.slice(-1)[0].date}}</div>
                         </div>
                     </div>
                 </div>
@@ -69,10 +71,10 @@
             <div id="r-side">
                 <div class="contact-nav">
                     <div class="l-contact-icons">
-                        <img src="img/avatar-1.svg" alt="Avatar Utente">
+                        <img :src="contacts[currentContact].avatar" alt="Avatar Utente">
                         <div class="contact-info">
-                            <div class="contact-name">Michele</div>
-                            <div class="last-access">Ultimo accesso alle ore</div>
+                            <div class="contact-name">{{contacts[currentContact].name}}</div>
+                            <div class="last-access">Ultimo accesso oggi alle ore {{contacts[currentContact].messages.slice(-1)[0].date}}</div>
                         </div>
                     </div>
                     <div class="r-contact-icons">
@@ -82,7 +84,13 @@
                     </div>
                 </div>
                 <div class="message-area">
-
+                    <div
+                    v-for="(message, index) in contacts[currentContact].messages" 
+                    class="message" 
+                    :class="(contacts[currentContact].messages[index].status == 'sent') ? 'message-sent' : 'message-received'" >
+                        {{contacts[currentContact].messages[index].text}}
+                        <span class="message-date">{{contacts[currentContact].messages[index].date}}</span>
+                    </div>
                 </div>
                 <div class="text-controls">
                     <i class="far fa-smile"></i>
