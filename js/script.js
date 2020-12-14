@@ -98,7 +98,7 @@ var app = new Vue(
             currentDate: dayjs().format('DD/MM/YYYY HH:mm:ss'),
             currentContact : 0,
             messageText: "",
-            contactText: "",
+            search: "",
         },
         methods: {
             setIndexContact: function(position) {
@@ -130,5 +130,14 @@ var app = new Vue(
                 );
             },
         },
+        computed: {
+            filteredContacts() {
+                return this.contacts.filter(
+                    element => {
+                        return element.name.toLocaleLowerCase().includes(this.search.toLowerCase());
+                    }
+                );
+            }
+        }
     }
 );
