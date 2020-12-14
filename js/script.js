@@ -95,16 +95,19 @@ var app = new Vue(
                     ],
                 },
             ],
-            currentDate: dayjs().format('DD/MM/YYYY HH:mm:ss'),
-            currentContact : 0,
-            messageText: "",
-            search: "",
+            currentDate: dayjs().format('DD/MM/YYYY HH:mm:ss'), // data aggiornata
+            currentContact: 0,  //index contatto
+            currentMessage: null,   //index messaggio
+            messageText: "",    //campo vuoto messaggio
+            search: "",     //campo vuoto ricerca contatti
         },
         methods: {
+            // funzione per impostare l'index del contatto cliccato
             setIndexContact: function(position) {
                 this.currentContact = position;
                 return this.currentContact;
             },
+            // funzione che inserisci messaggio scritto nell'array e da la risposta
             newMessage: function(contact) {
                 let newSentMessage = {
                     date: this.currentDate,
@@ -112,7 +115,7 @@ var app = new Vue(
                     status: 'sent'
                 };
 
-                this.contacts[contact].messages.push(newSentMessage);
+                this.filteredContacts[contact].messages.push(newSentMessage);
 
                 this.messageText = "";
 
@@ -124,12 +127,27 @@ var app = new Vue(
                             status: 'received'
                         };
 
-                        this.contacts[contact].messages.push(newReceivedMessage);
+                        this.filteredContacts[contact].messages.push(newReceivedMessage);
 
                     },1000
                 );
             },
+            // funzione per impostare l'index del messaggio al mouseenter
+            setIndexMessage: function(position) {
+                this.currentMessage = position;
+                return this.currentMessage;
+            },
+            // funzione per rimuovere l'index del messaggio al mouseleave
+            removeIndexMessage: function() {
+                this.currentMessage = null;
+                return this.currentMessage;
+            },
+            // funzione per eliminare il messaggio
+            deleteMessage: function(position, messagePosition) {
+                this.filteredContacts[position].messages.splice(messagePosition, 1);
+            },
         },
+        // funzione per filtrare i contatti
         computed: {
             filteredContacts() {
                 return this.contacts.filter(
@@ -141,3 +159,4 @@ var app = new Vue(
         }
     }
 );
+
