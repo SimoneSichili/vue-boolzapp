@@ -106,7 +106,8 @@
                     {{filteredContacts[currentContact].messages[index].text}}
                     <span class="message-date">{{filteredContacts[currentContact].messages[index].date}}</span>
                     <div class="dropdown" :class="(index == currentMessage ? 'dropdown-active' : null)">
-                        <span @click="deleteMessage(currentContact, currentMessage)">Delete message</span>
+                        <!-- <span @click="deleteMessage(currentContact, currentMessage)">Delete message</span> -->
+                        <i class="fas fa-trash" @click="deleteMessage(currentContact, currentMessage)"></i>
                     </div>
                 </div>
             </div>
