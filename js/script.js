@@ -95,7 +95,6 @@ var app = new Vue(
                     ],
                 },
             ],
-            currentDate: dayjs().format('DD/MM/YYYY HH:mm:ss'), // data aggiornata
             currentContact: 0,  //index contatto
             currentMessage: null,   //index messaggio
             messageText: "",    //campo vuoto messaggio
@@ -110,7 +109,7 @@ var app = new Vue(
             // funzione che inserisci messaggio scritto nell'array e da la risposta
             newMessage: function(contact) {
                 let newSentMessage = {
-                    date: this.currentDate,
+                    date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
                     text: this.messageText,
                     status: 'sent'
                 };
@@ -122,7 +121,7 @@ var app = new Vue(
                 setTimeout(
                     ()=> {
                         let newReceivedMessage = {
-                            date: this.currentDate,
+                            date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
                             text: "Ok",
                             status: 'received'
                         };
