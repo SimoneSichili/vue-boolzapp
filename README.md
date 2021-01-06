@@ -17,4 +17,5 @@
 **#2** Fill dynamically the contact list with a `v-for`. Display name and contact image.   
 **#3** Display dinamically the selected contact messages with a `v-for`.  
 **#4** Add a date in the last send message using the `day.js` library.  
-**#5** Set an auto-reply after sending a message.
+**#5** Add a new message by pressing "enter" in the right-bottom input field. Set an auto-reply after sending the message.  
+**#6** Filter the contacts using the input field on left side.
